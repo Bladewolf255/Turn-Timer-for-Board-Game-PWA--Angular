@@ -1,0 +1,134 @@
+<div class="options-container">
+    <h3>Time</h3>
+    
+  <form class="input-container__options-container">
+    @if(counterService.enableStart() === false){
+      
+      <label class="validate-msg" for="time">
+        
+        Enter time
+      </label>
+    }
+    <input 
+    (input)="onInput()"
+    (keydown)="allowOnlyNumbers($event)"
+    #timeElement
+    class="input-time__options-container" 
+    type="tel" 
+    maxlength="3" 
+    placeholder="Enter time in seconds"
+    name="time"
+    id="time"
+    >
+    
+  </form>
+  <p>
+    You have set a time of 
+    <span #timeSet style="color: wheat;font-weight: bold;"></span>
+    seconds
+  </p>
+  
+
+  <h3>Players</h3>
+  <div class="players-container__options-container">
+    <select 
+    #numPlayers
+    [formControl]="numPlayersControl"
+    class="select-players__players-container"
+    >
+    
+      <option selected>1 player</option>
+      <option>2 players</option>
+      <option>3 players</option>
+      <option>4 players</option>
+      <option>5 players</option>
+      <option>6 players</option>
+      <option>7 players</option>
+      <option>8 players</option>
+    </select>
+
+    <br>
+    <h3>Colors</h3>
+    <br>
+    <!--PLAYERS-->
+    <div class="players-containerB__options-container">
+      <!--PLAYER1-->
+      <div class="player-container__players-container">
+        <input 
+          [formControl]="player1ColorControl"
+          class="input__player-container"
+          type="color">
+          <i class="bi bi-person player-icon"></i>
+      </div>
+      @if(numPlayersControl.value === '2 players' || numPlayersControl.value === '3 players' || numPlayersControl.value === '4 players' || numPlayersControl.value === '5 players' || numPlayersControl.value === '6 players' || numPlayersControl.value === '7 players' || numPlayersControl.value === '8 players'){
+        <!--PLAYER2-->
+      <div class="player-container__players-container">
+        <input 
+          [formControl]="player2ColorControl"
+          class="input__player-container"
+          type="color">
+          <i class="bi bi-person player-icon"></i>
+      </div>
+      }
+      @if(numPlayersControl.value === '3 players' || numPlayersControl.value === '4 players' || numPlayersControl.value === '5 players' || numPlayersControl.value === '6 players' || numPlayersControl.value === '7 players' || numPlayersControl.value === '8 players'){
+        <!--PLAYER3-->
+      <div class="player-container__players-container">
+        <input 
+          [formControl]="player3ColorControl"
+          class="input__player-container"
+          type="color">
+          <i class="bi bi-person player-icon"></i>
+      </div>
+      }
+      @if(numPlayersControl.value === '4 players' || numPlayersControl.value === '5 players' || numPlayersControl.value === '6 players' || numPlayersControl.value === '7 players' || numPlayersControl.value === '8 players'){
+         <!--PLAYER4-->
+      <div class="player-container__players-container">
+        <input 
+          [formControl]="player4ColorControl"
+          class="input__player-container"
+          type="color">
+          <i class="bi bi-person player-icon"></i>
+      </div>
+      }
+      @if(numPlayersControl.value === '5 players' || numPlayersControl.value === '6 players' || numPlayersControl.value === '7 players' || numPlayersControl.value === '8 players'){
+         <!--PLAYER5-->
+     <div class="player-container__players-container">
+       <input 
+         [formControl]="player5ColorControl"
+         class="input__player-container"
+         type="color">
+         <i class="bi bi-person player-icon"></i>
+     </div>
+     }
+      @if(numPlayersControl.value === '6 players' || numPlayersControl.value === '7 players' || numPlayersControl.value === '8 players'){
+          <!--PLAYER6-->
+      <div class="player-container__players-container">
+        <input 
+          [formControl]="player6ColorControl"
+          class="input__player-container"
+          type="color">
+          <i class="bi bi-person player-icon"></i>
+      </div>
+      }
+      @if(numPlayersControl.value === '7 players' || numPlayersControl.value === '8 players'){
+          <!--PLAYER7-->
+      <div class="player-container__players-container">
+        <input 
+          [formControl]="player7ColorControl"
+          class="input__player-container"
+          type="color">
+          <i class="bi bi-person player-icon"></i>
+      </div>
+      }
+      @if(numPlayersControl.value === '8 players'){
+          <!--PLAYER8-->
+      <div class="player-container__players-container">
+        <input 
+          [formControl]="player8ColorControl"
+          class="input__player-container"
+          type="color">
+          <i class="bi bi-person player-icon"></i>
+      </div>
+      }
+     
+    </div>

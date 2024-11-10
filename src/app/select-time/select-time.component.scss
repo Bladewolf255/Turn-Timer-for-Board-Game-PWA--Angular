@@ -1,0 +1,174 @@
+@mixin playerText($content) {
+  content: $content;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: monospace;
+  text-align: center;
+  width: 100%;
+  height: 20px;
+  z-index: 9;
+  color: #d5def5;
+  font-weight: bold;
+  padding: 0.1em;
+  border-radius: 0.4em;
+  opacity: 0.8;
+  background-color: #430f5894;
+  pointer-events: none;
+}
+
+h3 {
+  font-family: monospace;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+}
+.options-container {
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+  .warning-icon {
+    font-size: 2em;
+    color: lightcoral;
+  }
+  .validate-msg {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    padding: 0.4em;
+    color: white;
+    background-color: red;
+    border-radius: 0 0.4em 0.4em 0;
+    text-align: center;
+    width: auto;
+    font-weight: bold;
+    opacity: 0.8;
+  }
+}
+.input-container__options-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.input-container__options-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-position: 0% 0%;
+  background: linear-gradient(
+    to right,
+    #2341eb,
+    #bafefe,
+    #e30a19,
+    #21f4f4,
+    #723bff,
+    #74ffff
+  );
+  background-size: 500% auto;
+  animation: input-border 5s linear infinite;
+}
+.input-time__options-container {
+  color: white;
+  flex-grow: 1;
+  padding: 1em;
+  text-align: center;
+  background-color: #430f58;
+  border: 0.2em solid #8594e4;
+  border-radius: 0.4em;
+  font-family: monospace;
+}
+.select-players__players-container {
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0.295);
+  border-radius: 0.4em;
+  border: 0.2em solid #8594e4;
+  font-family: monospace;
+  color: white;
+}
+.players-container__options-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  justify-content: center;
+  align-items: center;
+}
+.players-containerB__options-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 0.8em;
+}
+.player-container__players-container {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  width: fit-content;
+  height: auto;
+  .input__player-container {
+    width: 100px;
+    height: 50px;
+    background-color: #8593e48c;
+    border-radius: 0.4em;
+  }
+  .player-icon {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.367);
+    font-size: 1.3em;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border: 1px solid black;
+    border-radius: 50%;
+    
+  }
+}
+.player-container__players-container:nth-child(1)::before {
+  @include playerText("Player 1");
+}
+.player-container__players-container:nth-child(2)::before {
+  @include playerText("Player 2");
+}
+.player-container__players-container:nth-child(3)::before {
+  @include playerText("Player 3");
+}
+.player-container__players-container:nth-child(4)::before {
+  @include playerText("Player 4");
+}
+.player-container__players-container:nth-child(5)::before {
+  @include playerText("Player 5");
+}
+.player-container__players-container:nth-child(6)::before {
+  @include playerText("Player 6");
+}
+.player-container__players-container:nth-child(7)::before {
+  @include playerText("Player 7");
+}
+.player-container__players-container:nth-child(8)::before {
+  @include playerText("Player 8");
+}
+@keyframes input-border {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}

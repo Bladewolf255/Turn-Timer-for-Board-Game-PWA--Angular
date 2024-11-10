@@ -1,0 +1,34 @@
+<div class="timer-container">
+    <div 
+    class="timer__timer-container">
+      <!--countdown-->
+      <countdown 
+      #cd
+      class="countdown__timer" 
+      [config]="{ leftTime: loadElement(),format:'mm:ss', demand:false }" 
+      (event)="handleEvent($event)"></countdown>
+      <!--countdown controls-->
+      <div
+      class="btn-container__timer">
+        <div class="pause-btn__btn-container__timer">
+            <!--swap order button-->
+            <i class="bi bi-arrow-left-right swap-icon__timer" (click)="toggleChangeOrder()"></i>
+            @if(!zero){
+                <!--pause/resume button-->
+                @if(counting){ <i class="bi bi-pause" (click)="pauseEvent()"></i> }
+                @else{ <i class="bi bi-play"(click)="resumeCounting()"></i> }
+            }
+        </div>
+      </div>
+      <!--turn change button-->
+      <button 
+      [ngClass]="{'change-turn__timer--active':passTurnDisabled}"
+      [disabled]="passTurnDisabled"
+      class="change-turn__timer"
+      (click)="resetCounting()">
+        PASS TURN
+      </button>
+  
+    </div>
+  </div>
+  
